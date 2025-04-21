@@ -15,6 +15,19 @@
       align-items: center;
       min-height: 100vh;
       background-color: #282a36;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-smooth: always;
+      margin: 0;
+    }
+
+    /* 添加滚动容器样式 */
+    .scroll-container {
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      /* 让滚动更顺滑 */
     }
 
     canvas {
@@ -24,7 +37,10 @@
 </head>
 
 <body>
-  <canvas id="dataCanvas"></canvas>
+  <!-- 添加滚动容器 -->
+  <div class="scroll-container">
+    <canvas id="dataCanvas"></canvas>
+  </div>
   <script>
     const apiUrl =
       "https://admin.nolets.jp/V5/API/users/item?login_id=saas%40faker.faker&access_token=1b35b5c8ef2b14e6bd2db414f1b34cc2eb3a91ad&host=nolets.jp&app=order&store_id=11987&method=system&limit=2000&offset=0&fhtg=2&category_id=all&start_datetime=20250418&end_datetime=20250418&session_id=96m9maxow5";
