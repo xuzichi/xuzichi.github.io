@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API 数据实时展示</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #282a36;
+    }
+
+    canvas {
+      border: 1px solid #6272a4;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="dataCanvas"></canvas>
+  <script>
+    const apiUrl =
+      "https://admin.nolets.jp/V5/API/users/item?login_id=saas%40faker.faker&access_token=1b35b5c8ef2b14e6bd2db414f1b34cc2eb3a91ad&host=nolets.jp&app=order&store_id=11987&method=system&limit=2000&offset=0&fhtg=2&category_id=all&start_datetime=20250418&end_datetime=20250418&session_id=96m9maxow5";
+
+    const getItemList = (data) => {
+      return data?.ItemsInfo.map((item) => {
+        const currentStock = item.total_stock === -1 ? 0 : item.total_stock;
+        const salesAmount = item.max_sale_stock - currentStock;
+        return {
+          name: item.name,
+          price: item.value,
+          total_stock: item.total_stock,
+          sales_amount: salesAmount,
+          max_sale_stock: item.max_sale_stock,
+          person_stock: item.person_stock,
+        };
+      });
+    };
+
+    async function drawDataOnCanvas() {
+      try {
+        const response = await fetch(apiUrl, {
+          headers: {
+            Accept: "application/json, text/plain, */*"
+          }
+        });
+        if (!response.ok) {
+          throw new Error('网络请求失败');
+        }
+        const data = await response.json();
+        const itemList = getItemList(data);
+
+        const canvas = document.getElementById('dataCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // 提高画布分辨率
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = canvas.offsetWidth * dpr;
+        canvas.height = canvas.offsetHeight * dpr;
+        ctx.scale(dpr, dpr);
+
+        // 优化字体设置，选择更清晰的字体并调整粗细
+        ctx.font = "bold 18px Arial, sans-serif";
+
+        // 确保抗锯齿设置
+        ctx.imageSmoothingEnabled = true;
+        ctx.mozImageSmoothingEnabled = true;
+        ctx.webkitImageSmoothingEnabled = true;
+        ctx.msImageSmoothingEnabled = true;
+
+        const rowHeight = 30;
+        const padding = 20;
+
+        const headers = Object.keys(itemList[0]);
+        const columnWidths = {};
+        headers.forEach((header) => {
+          columnWidths[header] = ctx.measureText(header).width + 30;
+        });
+
+        itemList.forEach((row) => {
+          headers.forEach((header) => {
+            const textWidth = ctx.measureText(row[header]).width + 30;
+            if (textWidth > columnWidths[header]) {
+              columnWidths[header] = textWidth;
+            }
+          });
+        });
+
+        let totalWidth = 0;
+        headers.forEach((header) => {
+          totalWidth += columnWidths[header];
+        });
+
+        const canvasWidth = totalWidth + 80;
+        const canvasHeight = itemList.length * rowHeight + 120;
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+
+        ctx.fillStyle = "#282a36";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const currentDate = new Date();
+        const timestamp = `${currentDate.getFullYear()}-${String(
+          currentDate.getMonth() + 1
+        ).padStart(2, '0')}-${String(currentDate.getDate()).padStart(
+          2,
+          '0'
+        )}_${String(currentDate.getHours()).padStart(2, '0')}-${String(
+          currentDate.getMinutes()
+        ).padStart(2, '0')}-${String(currentDate.getSeconds()).padStart(2, '0')}`;
+        const title = `mygo_avemujica 场贩库存 - 北京时间${timestamp}`;
+        ctx.font = "bold 28px Arial, sans-serif";
+        ctx.fillStyle = "#ff79c6";
+        const titleWidth = ctx.measureText(title).width;
+        const titleX = (canvas.width - titleWidth) / 2;
+        const titleY = 30;
+        ctx.fillText(title, titleX, titleY);
+
+        ctx.font = "bold 18px Arial, sans-serif";
+
+        let currentX = 40;
+        let currentY = 70;
+        const textLeftPadding = 10;
+
+        ctx.fillStyle = "#ff79c6";
+        const chineseHeaders = {
+          name: "商品名称",
+          price: "价格",
+          total_stock: "当前库存",
+          sales_amount: "销售额",
+          max_sale_stock: "总库存",
+          person_stock: "个人限购"
+        };
+        headers.forEach((header) => {
+          const displayHeader = chineseHeaders[header] || header;
+          ctx.fillText(displayHeader, currentX + textLeftPadding, currentY);
+          currentX += columnWidths[header];
+        });
+
+        ctx.strokeStyle = "#6272a4";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(40, currentY + 10);
+        currentX = 40;
+        headers.forEach((header) => {
+          currentX += columnWidths[header];
+        });
+        ctx.lineTo(currentX, currentY + 10);
+        ctx.stroke();
+
+        currentY += rowHeight;
+
+        const colors = ["#8be9fd", "#50fa7b", "#bd93f9", "#ffb86c", "#ff5555"];
+        itemList.forEach((row, rowIndex) => {
+          currentX = 40;
+          headers.forEach((header, index) => {
+            ctx.fillStyle = colors[index % colors.length];
+            let text = row[header];
+            if (header === 'name') {
+              const maxWidth = columnWidths[header] - textLeftPadding * 2;
+              while (ctx.measureText(text).width > maxWidth) {
+                text = text.slice(0, -1);
+              }
+              if (row[header].length > text.length) {
+                text = text.slice(0, -3) + '...';
+              }
+            }
+            ctx.fillText(text, currentX + textLeftPadding, currentY);
+            currentX += columnWidths[header];
+          });
+
+          ctx.beginPath();
+          ctx.moveTo(40, currentY + 10);
+          currentX = 40;
+          headers.forEach((header) => {
+            currentX += columnWidths[header];
+          });
+          ctx.lineTo(currentX, currentY + 10);
+          ctx.stroke();
+
+          currentY += rowHeight;
+        });
+
+        currentX = 40;
+        headers.forEach((header) => {
+          ctx.beginPath();
+          ctx.moveTo(currentX, 70);
+          ctx.lineTo(currentX, currentY - rowHeight);
+          ctx.stroke();
+          currentX += columnWidths[header];
+        });
+        ctx.beginPath();
+        ctx.moveTo(currentX, 70);
+        ctx.lineTo(currentX, currentY - rowHeight);
+        ctx.stroke();
+      } catch (error) {
+        console.error('数据加载出错:', error);
+      }
+    }
+
+    drawDataOnCanvas();
+    setInterval(drawDataOnCanvas, 20000);
+  </script>
+</body>
+
+</html>
