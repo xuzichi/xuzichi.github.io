@@ -21,25 +21,38 @@
       margin: 0;
     }
 
-    /* 添加滚动容器样式 */
     .scroll-container {
       width: 100%;
       max-width: 100vw;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      /* 让滚动更顺滑 */
     }
 
-    canvas {
+    table {
+      border-collapse: collapse;
+      width: auto;
+      color: white;
+    }
+
+    th,
+    td {
       border: 1px solid #6272a4;
+      padding: 10px;
+      text-align: left;
+      white-space: nowrap;
+      /* 防止文本换行 */
+    }
+
+    th {
+      background-color: #282a36;
+      color: #ff79c6;
     }
   </style>
 </head>
 
 <body>
-  <!-- 添加滚动容器 -->
   <div class="scroll-container">
-    <canvas id="dataCanvas"></canvas>
+    <table id="dataTable"></table>
   </div>
   <script>
     const apiUrl =
@@ -60,7 +73,7 @@
       });
     };
 
-    async function drawDataOnCanvas() {
+    async function drawDataOnTable() {
       try {
         const response = await fetch(apiUrl, {
           headers: {
@@ -73,54 +86,8 @@
         const data = await response.json();
         const itemList = getItemList(data);
 
-        const canvas = document.getElementById('dataCanvas');
-        const ctx = canvas.getContext('2d');
-
-        // 提高画布分辨率
-        const dpr = window.devicePixelRatio || 1;
-        canvas.width = canvas.offsetWidth * dpr;
-        canvas.height = canvas.offsetHeight * dpr;
-        ctx.scale(dpr, dpr);
-
-        // 优化字体设置，选择更清晰的字体并调整粗细
-        ctx.font = "bold 18px Arial, sans-serif";
-
-        // 确保抗锯齿设置
-        ctx.imageSmoothingEnabled = true;
-        ctx.mozImageSmoothingEnabled = true;
-        ctx.webkitImageSmoothingEnabled = true;
-        ctx.msImageSmoothingEnabled = true;
-
-        const rowHeight = 30;
-        const padding = 20;
-
-        const headers = Object.keys(itemList[0]);
-        const columnWidths = {};
-        headers.forEach((header) => {
-          columnWidths[header] = ctx.measureText(header).width + 30;
-        });
-
-        itemList.forEach((row) => {
-          headers.forEach((header) => {
-            const textWidth = ctx.measureText(row[header]).width + 30;
-            if (textWidth > columnWidths[header]) {
-              columnWidths[header] = textWidth;
-            }
-          });
-        });
-
-        let totalWidth = 0;
-        headers.forEach((header) => {
-          totalWidth += columnWidths[header];
-        });
-
-        const canvasWidth = totalWidth + 80;
-        const canvasHeight = itemList.length * rowHeight + 120;
-        canvas.width = canvasWidth;
-        canvas.height = canvasHeight;
-
-        ctx.fillStyle = "#282a36";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        const table = document.getElementById('dataTable');
+        table.innerHTML = '';
 
         const currentDate = new Date();
         const timestamp = `${currentDate.getFullYear()}-${String(
@@ -132,20 +99,14 @@
           currentDate.getMinutes()
         ).padStart(2, '0')}-${String(currentDate.getSeconds()).padStart(2, '0')}`;
         const title = `mygo_avemujica 场贩库存 - 北京时间${timestamp}`;
-        ctx.font = "bold 28px Arial, sans-serif";
-        ctx.fillStyle = "#ff79c6";
-        const titleWidth = ctx.measureText(title).width;
-        const titleX = (canvas.width - titleWidth) / 2;
-        const titleY = 30;
-        ctx.fillText(title, titleX, titleY);
+        const caption = document.createElement('caption');
+        caption.textContent = title;
+        caption.style.color = '#ff79c6';
+        caption.style.fontSize = '28px';
+        caption.style.padding = '10px';
+        table.appendChild(caption);
 
-        ctx.font = "bold 18px Arial, sans-serif";
-
-        let currentX = 40;
-        let currentY = 70;
-        const textLeftPadding = 10;
-
-        ctx.fillStyle = "#ff79c6";
+        const headers = Object.keys(itemList[0]);
         const chineseHeaders = {
           name: "商品名称",
           price: "价格",
@@ -154,75 +115,38 @@
           max_sale_stock: "总库存",
           person_stock: "个人限购"
         };
+
+        const thead = document.createElement('thead');
+        const headerRow = document.createElement('tr');
         headers.forEach((header) => {
-          const displayHeader = chineseHeaders[header] || header;
-          ctx.fillText(displayHeader, currentX + textLeftPadding, currentY);
-          currentX += columnWidths[header];
+          const th = document.createElement('th');
+          th.textContent = chineseHeaders[header] || header;
+          headerRow.appendChild(th);
         });
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
 
-        ctx.strokeStyle = "#6272a4";
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(40, currentY + 10);
-        currentX = 40;
-        headers.forEach((header) => {
-          currentX += columnWidths[header];
-        });
-        ctx.lineTo(currentX, currentY + 10);
-        ctx.stroke();
-
-        currentY += rowHeight;
-
+        const tbody = document.createElement('tbody');
         const colors = ["#8be9fd", "#50fa7b", "#bd93f9", "#ffb86c", "#ff5555"];
         itemList.forEach((row, rowIndex) => {
-          currentX = 40;
+          const tr = document.createElement('tr');
           headers.forEach((header, index) => {
-            ctx.fillStyle = colors[index % colors.length];
+            const td = document.createElement('td');
             let text = row[header];
-            if (header === 'name') {
-              const maxWidth = columnWidths[header] - textLeftPadding * 2;
-              while (ctx.measureText(text).width > maxWidth) {
-                text = text.slice(0, -1);
-              }
-              if (row[header].length > text.length) {
-                text = text.slice(0, -3) + '...';
-              }
-            }
-            ctx.fillText(text, currentX + textLeftPadding, currentY);
-            currentX += columnWidths[header];
+            td.textContent = text;
+            td.style.color = colors[index % colors.length];
+            tr.appendChild(td);
           });
-
-          ctx.beginPath();
-          ctx.moveTo(40, currentY + 10);
-          currentX = 40;
-          headers.forEach((header) => {
-            currentX += columnWidths[header];
-          });
-          ctx.lineTo(currentX, currentY + 10);
-          ctx.stroke();
-
-          currentY += rowHeight;
+          tbody.appendChild(tr);
         });
-
-        currentX = 40;
-        headers.forEach((header) => {
-          ctx.beginPath();
-          ctx.moveTo(currentX, 70);
-          ctx.lineTo(currentX, currentY - rowHeight);
-          ctx.stroke();
-          currentX += columnWidths[header];
-        });
-        ctx.beginPath();
-        ctx.moveTo(currentX, 70);
-        ctx.lineTo(currentX, currentY - rowHeight);
-        ctx.stroke();
+        table.appendChild(tbody);
       } catch (error) {
         console.error('数据加载出错:', error);
       }
     }
 
-    drawDataOnCanvas();
-    setInterval(drawDataOnCanvas, 20000);
+    drawDataOnTable();
+    setInterval(drawDataOnTable, 20000);
   </script>
 </body>
 
