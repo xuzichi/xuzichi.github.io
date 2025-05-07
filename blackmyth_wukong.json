@@ -1,0 +1,174 @@
+{
+  "v": 7,
+  "name": "blackmyth_wukong",
+  "folders": [],
+  "requests": [
+    {
+      "v": "12",
+      "name": "查询票务可售日期和日期id",
+      "method": "GET",
+      "endpoint": "https://apiuserv6.zhongzhiyou.cn/product/month/priceList",
+      "params": [
+        {
+          "key": "month",
+          "value": "202505",
+          "active": true,
+          "description": "查询月份"
+        },
+        {
+          "key": "scenicProductId",
+          "value": "10399",
+          "active": true,
+          "description": "查询产品id（本次黑神话悟空展为10396-10399）"
+        }
+      ],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "12",
+      "name": "查询票务特定日期库存信息",
+      "method": "GET",
+      "endpoint": "https://apiuserv6.zhongzhiyou.cn/product/getSessionList/997218",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "12",
+      "name": "添加联系人",
+      "method": "POST",
+      "endpoint": "https://apiuserv6.zhongzhiyou.cn/contacts/add",
+      "params": [],
+      "headers": [
+        {
+          "key": "authorization",
+          "value": "hhhhhhhhhhhhhhhhh",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"certificateText\": \"身份证\",\n  \"certificateType\": \"IdCard\",\n  \"name\": \"hhhhhhhhhhhhhhhhh\",\n  \"mobile\": \"hhhhhhhhhhhhhhhhh\",\n  \"idCard\": \"hhhhhhhhhhhhhhhhh\",\n  \"Authorization\": \"hhhhhhhhhhhhhhhhh\"\n}\n"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "12",
+      "name": "查询联系人",
+      "method": "GET",
+      "endpoint": "https://apiuserv6.zhongzhiyou.cn/contacts/list",
+      "params": [
+        {
+          "key": "Authorization",
+          "value": "hhhhhhhhhhhhhhhhh",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "12",
+      "name": "删除联系人",
+      "method": "POST",
+      "endpoint": "https://apiuserv6.zhongzhiyou.cn/contacts/remove",
+      "params": [],
+      "headers": [
+        {
+          "key": "authorization",
+          "value": "hhhhhhhhhhhhhhhhh",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"id\": 430666,\n  \"Authorization\": \"hhhhhhhhhhhhhhhhh\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "12",
+      "name": "提交订单",
+      "method": "POST",
+      "endpoint": "https://apiuserv6.zhongzhiyou.cn/order/placeOrder",
+      "params": [],
+      "headers": [
+        {
+          "key": "authorization",
+          "value": "hhhhhhhhhhhhhhhhh",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"linkIdCard\": \"hhhhhhhhhhhhhhhhh\",\n  \"linkMobile\": \"hhhhhhhhhhhhhhhhh\",\n  \"linkName\": \"hhhhhhhhhhhhhhhhh\",\n  \"name\": \"【长者票】「黑神话：悟空」艺术展\",\n  \"productId\": 10399,\n  \"quantity\": 1,\n  \"touristList\": [\n    {\n      \"id\": 436190,\n      \"userId\": 34721531,\n      \"name\": \"hhhhhhhhhhhhhhhhh\",\n      \"mobile\": \"hhhhhhhhhhhhhhhhh\",\n      \"idCard\": \"hhhhhhhhhhhhhhhhh\",\n      \"defaultFlag\": 0,\n      \"certificateType\": \"IdCard\",\n      \"other\": null,\n      \"createTime\": \"2025-05-07 22:18:29\"\n    }\n  ],\n  \"sessionId\": 12118,\n  \"visitDate\": \"2025-05-08\",\n  \"promoterUserId\": \"null\",\n  \"appId\": \"wx2c5ce7c6bb1eade0\",\n  \"Authorization\": \"hhhhhhhhhhhhhhhhh\"\n}\n"
+      },
+      "requestVariables": [],
+      "responses": {}
+    }
+  ],
+  "auth": {
+    "authActive": true,
+    "authType": "none"
+  },
+  "headers": [],
+  "_ref_id": "coll_madvtc9w_067d4aaf-8c27-4b73-bf07-a9557d798420"
+}
