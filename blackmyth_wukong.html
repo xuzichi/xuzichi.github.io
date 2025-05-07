@@ -27,6 +27,35 @@
     .toast.error {
       background-color: #dc3545;
     }
+
+    .stock-available {
+      color: #22c55e;
+    }
+
+    .loading {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+    }
+
+    .loading i {
+      font-size: 48px;
+      color: #3b82f6;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   </style>
 </head>
 
@@ -60,6 +89,9 @@
       <tbody></tbody>
     </table>
     <div id="toast" class="toast"></div>
+    <div class="loading" id="loading-indicator">
+      <i class="fas fa-spinner"></i>
+    </div>
   </div>
   <script>
     const updateTable = (data) => {
@@ -67,6 +99,9 @@
       tableBody.innerHTML = '';
       data.forEach(item => {
         const row = document.createElement('tr');
+        if (item.stockNumber > 0) {
+          row.classList.add('stock-available');
+        }
         row.innerHTML = `
                     <td class="px-4 py-2 border-b">${item.day}/${item.id}</td>
                     <td class="px-4 py-2 border-b">${item.title}</td>
@@ -87,7 +122,18 @@
       }, 3000);
     };
 
+    const showLoadingIndicator = () => {
+      const loadingIndicator = document.getElementById('loading-indicator');
+      loadingIndicator.style.display = 'block';
+    };
+
+    const hideLoadingIndicator = () => {
+      const loadingIndicator = document.getElementById('loading-indicator');
+      loadingIndicator.style.display = 'none';
+    };
+
     const fetchData = async () => {
+      showLoadingIndicator();
       const now = new Date();
       const month = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}`;
       const productIds = [];
@@ -135,6 +181,7 @@
       }
       updateTable(allResults);
       showToast(hasError ? '刷新失败，请检查网络或接口状态' : '刷新成功', !hasError);
+      hideLoadingIndicator();
     };
 
     // 首次加载数据
