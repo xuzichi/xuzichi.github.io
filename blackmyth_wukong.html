@@ -119,7 +119,7 @@
                     day: item.day,
                     id: item.id,
                     title: session.title,
-                    stockNumber: session.stockNumber
+                    stockNumber: session.enable ? session.stockNumber : 0
                   });
                 });
               } catch (error) {
