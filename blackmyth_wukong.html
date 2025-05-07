@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>票务信息监控</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <style>
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .toast.success {
+      background-color: #28a745;
+    }
+
+    .toast.error {
+      background-color: #dc3545;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 p-4">
+  <div class="container mx-auto">
+    <h1 class="text-2xl font-bold mb-4">票务信息监控</h1>
+    <div class="mb-4">
+      <label class="mr-2">选择产品类型：</label>
+      <input type="checkbox" id="product-10396" checked>
+      <label for="product-10396" class="mr-2">10396</label>
+      <input type="checkbox" id="product-10397" checked>
+      <label for="product-10397">10397</label>
+      <button id="refresh-button" class="ml-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        手动刷新
+      </button>
+      <label for="refresh-frequency" class="ml-4">刷新频率 (秒)：</label>
+      <input type="number" id="refresh-frequency" value="60" class="border border-gray-300 p-2">
+      <button id="set-frequency-button"
+        class="ml-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        设置
+      </button>
+    </div>
+    <table id="ticket-table" class="min-w-full bg-white border border-gray-300">
+      <thead>
+        <tr>
+          <th class="px-4 py-2 border-b">日期(day/id)</th>
+          <th class="px-4 py-2 border-b">时间段(title)</th>
+          <th class="px-4 py-2 border-b">库存数(stockNumber)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div id="toast" class="toast"></div>
+  </div>
+  <script>
+    const updateTable = (data) => {
+      const tableBody = document.querySelector('#ticket-table tbody');
+      tableBody.innerHTML = '';
+      data.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+                    <td class="px-4 py-2 border-b">${item.day}/${item.id}</td>
+                    <td class="px-4 py-2 border-b">${item.title}</td>
+                    <td class="px-4 py-2 border-b">${item.stockNumber}</td>
+                `;
+        tableBody.appendChild(row);
+      });
+    };
+
+    const showToast = (message, isSuccess) => {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.remove('success', 'error');
+      toast.classList.add(isSuccess ? 'success' : 'error');
+      toast.style.opacity = '1';
+      setTimeout(() => {
+        toast.style.opacity = '0';
+      }, 3000);
+    };
+
+    const fetchData = async () => {
+      const now = new Date();
+      const month = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}`;
+      const productIds = [];
+      if (document.getElementById('product-10396').checked) {
+        productIds.push(10396);
+      }
+      if (document.getElementById('product-10397').checked) {
+        productIds.push(10397);
+      }
+      const allResults = [];
+      let hasError = false;
+      for (const productId of productIds) {
+        try {
+          const priceListResponse = await fetch(`https://apiuserv6.zhongzhiyou.cn/product/month/priceList?month=${month}&scenicProductId=${productId}`);
+          if (!priceListResponse.ok) {
+            throw new Error(`请求价格列表失败，状态码：${priceListResponse.status}`);
+          }
+          const priceList = await priceListResponse.json();
+          for (const item of priceList.data) {
+            if (item.enabled) {
+              try {
+                const sessionListResponse = await fetch(`https://apiuserv6.zhongzhiyou.cn/product/getSessionList/${item.id}`);
+                if (!sessionListResponse.ok) {
+                  throw new Error(`请求库存信息失败，状态码：${sessionListResponse.status}`);
+                }
+                const sessionList = await sessionListResponse.json();
+                sessionList.data.forEach(session => {
+                  allResults.push({
+                    day: item.day,
+                    id: item.id,
+                    title: session.title,
+                    stockNumber: session.stockNumber
+                  });
+                });
+              } catch (error) {
+                console.error(error);
+                hasError = true;
+              }
+            }
+          }
+        } catch (error) {
+          console.error(error);
+          hasError = true;
+        }
+      }
+      updateTable(allResults);
+      showToast(hasError ? '刷新失败，请检查网络或接口状态' : '刷新成功', !hasError);
+    };
+
+    // 首次加载数据
+    fetchData();
+    let intervalId = setInterval(fetchData, 60000);
+
+    // 为手动刷新按钮添加点击事件监听器
+    const refreshButton = document.getElementById('refresh-button');
+    refreshButton.addEventListener('click', fetchData);
+
+    // 为设置频率按钮添加点击事件监听器
+    const setFrequencyButton = document.getElementById('set-frequency-button');
+    setFrequencyButton.addEventListener('click', () => {
+      const frequencyInput = document.getElementById('refresh-frequency');
+      const newFrequency = parseInt(frequencyInput.value);
+      if (!isNaN(newFrequency) && newFrequency > 0) {
+        clearInterval(intervalId);
+        intervalId = setInterval(fetchData, newFrequency * 1000);
+      } else {
+        alert('请输入一个有效的正整数作为刷新频率。');
+      }
+    });
+  </script>
+</body>
+
+</html>
