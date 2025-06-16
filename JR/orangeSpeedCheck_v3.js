@@ -329,3 +329,9 @@ function isInAppBrowser() {
   console.log("isInAppBrowser() called", result);
   return result;
 }
+
+// 导出需要暴露的函数
+module.exports = {
+  requirementMet,
+  checkRide,
+};
