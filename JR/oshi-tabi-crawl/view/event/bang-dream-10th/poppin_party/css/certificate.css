@@ -1,0 +1,672 @@
+.exchangePage {
+    /* background-color: #FFE4F0; */
+    width: 430px;
+    margin: auto;
+    position: relative;
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+main {
+    margin-top: 66px;
+    position: relative;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 550;
+}
+
+.page-content {
+    width: 430px;
+    max-width: 430px;
+    padding-bottom: 20px;
+}
+
+main::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: url(/view/event-beyooooonds2nd/img/bg.jpg); */
+    background-size: cover;
+    z-index: -2;
+}
+
+main:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: (255,255,255,0.5);
+    background-size: cover;
+    z-index: -1;
+    mix-blend-mode: screen;
+}
+
+.completedHeader .checkIcon {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.completedHeader .checkIcon img {
+    width: 52%;
+    height: auto;
+}
+
+.completedHeader .courseName {
+    background: white;
+    /* color: #0da2fe; */
+    font-size: 19px;
+    font-weight: 400;
+    border-radius: 30px;
+    padding: 2px 15px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.completedHeader .completed {
+    color: white;
+    font-size: 32px;
+    letter-spacing: 1px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 550;
+    text-align: center;
+}
+
+.charaImage {
+    display: flex;
+    /* Enable Flexbox */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically, if needed */
+    position: relative;
+    /* left: 2%;
+    margin-top: 30px; */
+    z-index: 0;
+    width: 100%;
+    max-height: 550px;
+    /* Set a height if you want to center vertically as well */
+}
+
+
+.charaImage img {
+    width: 100%;
+    margin: auto;
+}
+
+.courseNameBG {
+    position: absolute;
+    left: 5px;
+    top: 320px;
+    z-index: 0;
+    font-weight: bold;
+    transform: rotate(-30deg);
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 0.9;
+}
+
+.courseNameBG span {
+    color: white;
+    display: inline-block;
+}
+
+.courseNameBG span:first-child {
+    font-size: 50px;
+}
+
+.courseNameBG span:last-child {
+    font-size: 80px;
+}
+
+.componentBelow {
+    position: absolute;
+    top: 600px;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.disabled {
+    background: linear-gradient(to right, gray, darkgray);
+    color: #ebebeb;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+.three-gradient {
+    background: linear-gradient(to bottom, #0dd3fe, #0da2fe);
+}
+
+.three-text {
+    color: #0da2fe;
+}
+
+.three-background {
+    background: url('https://dev-material.voistock.com/photo/image.php?id=64bcc38d66099&photo=64bcc38d660fd'),
+        linear-gradient(to bottom, #9fd9ff, #e6f6ff);
+}
+
+
+
+
+.expired {
+    filter: grayscale(100%);
+}
+
+.sliderexpired {
+    pointer-events: none;
+    filter: grayscale(100%);
+    cursor: not-allowed;
+}
+
+.sliderDisabled {
+    pointer-events: none;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+
+.time img {
+    height: 20px;
+    width: auto;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.timeout {
+    display: none;
+    color: #030303;
+    background: white;
+    border: #030303 1px solid;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: absolute;
+    top: 400px;
+    left: 10%;
+    width: 80%;
+    letter-spacing: 1px;
+    transform: rotate(-5deg);
+    z-index: 100;
+}
+
+.timeout .title {
+    font-size: 25px;
+    display: block;
+}
+
+.timeout .text {
+    font-size: 15px;
+    display: block;
+}
+
+
+.hashtag {
+    width: 100%;
+    padding: 0px 20px;
+    margin: auto;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* SLIDER */
+.completedSlider {
+    position: relative;
+    padding-top: 20px;
+    /* top: 700px; */
+    width: 100%;
+    padding-bottom: 20px;
+    background: white;
+    color: #030303;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+
+.completedSlider .askStaff {
+    /* color: #0da2fe; */
+    text-align: center;
+    position: relative;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    /* padding-left: 30px; */
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+.completedSlider .askStaff .left-svg {
+    position: absolute;
+    top: 65%;
+    left: 12%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.completedSlider .sliderContainer {
+    position: relative;
+    border: 5px solid white;
+    background-color: #e7e7e7;
+    border-radius: 31px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+    height: 62px;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-left: 10%;
+    /* adjust as needed */
+    padding-right: 10%;
+    /* adjust as needed */
+    box-sizing: border-box;
+}
+
+#slider {
+    width: 90%;
+    max-width: 400px;
+    height: 62px;
+    background: #e7e7e7;
+    border-radius: 31px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+    border: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+
+.completedSlider .sliderComment {
+    color: #030303;
+    text-align: center;
+    margin-top: 11px;
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+#slider .ui-slider-handle {
+    visibility: hidden;
+    cursor: pointer;
+}
+
+
+.oshitabi-button {
+    position: relative;
+    color: #fff;
+    background: linear-gradient(to right, #f8bd00, #f19500, #eb6c00);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    letter-spacing: 1px;
+    z-index: 10;
+    font-family: 'Noto Sans JP', sans-serif;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.oshitabi-button img {
+    position: absolute;
+    left: 20px;
+    height: 20px;
+}
+
+#overlay {
+    /* background: linear-gradient(to bottom, #0dd3fe, #0da2fe); */
+    height: 100%;
+    width: 0px;
+    position: absolute;
+    left: -75px;
+    z-index: 1;
+}
+
+#handle {
+    width: 140px;
+    height: 52px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 52px;
+    color: white;
+    border-radius: 26px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    left: 0;
+    z-index: 2;
+}
+
+#handleUsed {
+    width: 100%;
+    height: 52px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 52px;
+    color: white;
+    /* background: linear-gradient(to bottom, #0dd3fe, #0da2fe); */
+    border-radius: 26px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    left: 0;
+    z-index: 2;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.modal-content button {
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    transition: 0.3s;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.modal-content #yesBtn {
+    background-color: var(--color-sub2);
+    color: white;
+}
+
+.modal-content #yesBtn:hover {
+    background-color: #eb6c00;
+}
+
+.modal-content #noBtn {
+    background-color: gray;
+    color: white;
+}
+
+.modal-content #noBtn:hover {
+    background-color: darkgray;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+    /* Take full width */
+}
+
+.oshitabiButton {
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, orange, orange);
+    /* background: linear-gradient(to right, #030303, #030303, #030303); */
+    width: 80%;
+    max-width: 320px;
+    height: 50px;
+    max-height: 50px;
+    aspect-ratio: 4 / 1;
+    margin-bottom: 10px;
+    border: 0px #fff;
+    border-radius: 25px;
+    padding: 5px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    font-size: 18px;
+}
+
+
+.oshitabiButton:disabled {
+    background: linear-gradient(to right, gray, darkgray);
+    pointer-events: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+.oshitabiButton:active {
+    /* Styles for when the button is clicked */
+    transform: scale(0.95);
+    /* Slightly scale down the button */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* Optionally, change the shadow for depth effect */
+}
+
+.oshitabiButton::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    border: 2px solid #fff;
+    border-radius: 23px;
+    pointer-events: none;
+    flex-direction: column;
+}
+
+/* selectors */
+
+.optionsection {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    /* Adjust the vertical margin as needed */
+}
+
+.optionsection .option {
+    width: 90%;
+    /* Adjust width as needed */
+    margin: 0 auto;
+    /* Center the option container */
+}
+
+.optionsection .select {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.optionsection select {
+    width: 100%;
+    padding: 15px 20px;
+    /* Adjust padding for better spacing */
+    padding-right: 40px;
+    /* Increase right padding to prevent text overlap with the arrow */
+    border-radius: 10px;
+    /* Rounded edges */
+    border: 1px solid #ccc;
+    /* Light border */
+    background-color: #fff;
+    /* White background */
+    -webkit-appearance: none;
+    /* Remove default style in WebKit browsers */
+    -moz-appearance: none;
+    /* Remove default style in Mozilla browsers */
+    appearance: none;
+    /* Remove default style */
+    font-size: 16px;
+    /* Adjust font size as needed */
+    color: #000;
+    /* Text color */
+    box-sizing: border-box;
+    /* Ensures padding does not affect the final width */
+}
+
+
+.optionsection .select::after {
+    content: '\25BC';
+    /* Down arrow icon */
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    /* Makes it unclickable */
+    color: #EA339D;
+    /* Arrow color */
+    font-size: 18px;
+    /* Adjust arrow size */
+}
+
+/* Additional styles to ensure the select box looks good across different browsers */
+.optionsection select::-ms-expand {
+    display: none;
+    /* Hide the default arrow in IE */
+}
+
+/* Style focus state for better accessibility */
+.optionsection select:focus {
+    outline: none;
+    border-color: #007BFF;
+    /* Highlight color when focused */
+}
+
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    list-style: none;
+    -webkit-font-feature-settings: 'palt' 1;
+    font-feature-settings: 'palt' 1;
+}
+
+ul.caution {
+    margin: 20px 0 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    -webkit-font-feature-settings: 'palt' 1;
+    font-feature-settings: 'palt' 1;
+}
+
+ul.caution li {
+    position: relative;
+    padding: 0 0 0 1.1em;
+}
+
+ul.caution li::after {
+    position: absolute;
+    display: block;
+    content: "※";
+    top: 0;
+    left: 0;
+}
+
+ul.caution li {
+    list-style: none;
+}
+
+
+/* Exchange places */
+
+.location-info {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.location-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.spacer {
+    margin: 20px 0;
+}
+
+.location-details {
+    display: flex;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.detail-label {
+    min-width: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: justify;
+    text-align-last: justify;
+}
+
+
+.detail-value {
+    margin-left: 10px;
+    flex-grow: 1;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.detail-value a {
+    text-decoration: underline;
+    color: inherit;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.detail-value a:hover {
+    color: #007BFF;
+}

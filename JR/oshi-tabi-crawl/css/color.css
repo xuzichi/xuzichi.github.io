@@ -1,0 +1,588 @@
+.gradientWhite {
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+}
+
+.gradientRed {
+  background: linear-gradient(135deg, #ff5349, #ff847c);
+}
+
+.gradientPink {
+  background: linear-gradient(135deg, #ff79a7, #ffabc1);
+}
+
+.gradientPurple {
+  background: linear-gradient(135deg, #ab47bc, #ce93d8);
+}
+
+.gradientDeepPurple {
+  background: linear-gradient(135deg, #7e57c2, #b39ddb);
+}
+
+.gradientIndigo {
+  background: linear-gradient(135deg, #5c6bc0, #9fa8da);
+}
+
+.gradientBlue {
+  background: linear-gradient(135deg, #2096f3, #90caf9);
+}
+
+.gradientLightBlue {
+  background: linear-gradient(135deg, #29b6f6, #81d4fa);
+}
+
+.gradientCyan {
+  background: linear-gradient(135deg, #00acc1, #80deea);
+}
+
+.gradientTeal {
+  background: linear-gradient(135deg, #009688, #80cbc4);
+}
+
+.gradientGreen {
+  background: linear-gradient(135deg, #43a047, #a5d6a7);
+}
+
+.gradientLime {
+  background: linear-gradient(135deg, #c0ca33, #e6ee9c);
+}
+
+.gradientYellow {
+  background: linear-gradient(135deg, #ffee58, #fff59d);
+}
+
+.gradientAmber {
+  background: linear-gradient(135deg, #ffc107, #ffe082);
+}
+
+.gradientOrange {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+.gradientLightOrange {
+  background: linear-gradient(135deg, #fb8c00, #ffcc80);
+}
+
+.gradientDeepOrange {
+  background: linear-gradient(135deg, #ff5722, #ffab91);
+}
+
+.gradientBrown {
+  background: linear-gradient(135deg, #795548, #bcaaa4);
+}
+
+.gradientGray {
+  background: linear-gradient(135deg, #9e9e9e, #eeeeee);
+}
+
+.gradientBlueGray {
+  background: linear-gradient(135deg, #607d8b, #cfd8dc);
+}
+
+.gradientBlack {
+  background: linear-gradient(135deg, #000000, #616161);
+}
+
+
+
+/*For OREGAIRU
+
+  Hachiman: #3366cc
+  Komachi: #6666cc
+  Yui: #cc3366
+  Iroha: #ffcc66
+  Yukino: #0da2fe
+
+
+  */
+
+.gradientYellowPink {
+  background: linear-gradient(135deg, #ffcc66, #cc3366);
+}
+
+.gradientPinkBlue {
+  background: linear-gradient(135deg, #cc3366, #0da2fe);
+}
+
+.gradientBluePurple {
+  background: linear-gradient(135deg, #0da2fe, #6666cc);
+}
+
+.gradientBlueBlack {
+  background: linear-gradient(135deg, #0da2fe, #3366cc);
+}
+
+.gradientPurpleYellow {
+  background: linear-gradient(135deg, #6666cc, #ffcc66);
+}
+
+
+.gradientPinkBlackPurple {
+  background: linear-gradient(135deg, #cc3366, #3366cc, #6666cc);
+}
+
+.gradientBlackYellow {
+  background: linear-gradient(135deg, #3366cc, #ffcc66);
+}
+
+
+.gradientGotoubunColorful {
+  background: linear-gradient(135deg, #ff9600, #ba47a6, #0da2fe, #7ec50d, #fe100e);
+}
+
+.gradientGotoubun {
+  background: linear-gradient(135deg, #ffccff, #FFF0F5);
+  background-image:
+          url("https://material.voistock.com/photo/image.php?id=64c73a0a2a438&photo=64c73a0a2a4a3");
+  background-position: center;
+}
+
+
+.gradientLightPink {
+  background: linear-gradient(135deg, #FFB6D5, #FFF0F5);
+}
+
+.gradientLightGreen {
+  background: linear-gradient(135deg, #DDFD41, #c5e1a5);
+}
+
+.gradientEmeraldGreen {
+  background: linear-gradient(135deg, #05A1A8, #55c2ae)
+}
+
+.gradientTiffanyBlue {
+  background: linear-gradient(135deg, #05A1A8, #51C5D2)
+}
+
+
+
+/*for bang dream!*/
+
+.gradientRoselia {
+  background: linear-gradient(135deg, #0A5EA6, #1C1468)
+}
+
+.gradientAfterglow {
+  background: linear-gradient(135deg, #8692A7, #FFDF99)
+}
+
+.gradientMorfonica {
+  background: linear-gradient(135deg, #95C4F5, #0C3C5D)
+}
+
+.gradientMyGO {
+  background: linear-gradient(135deg, #FFFFFF, #69ABC0)
+}
+
+.gradientDivideUnite {
+  background: linear-gradient(135deg, #EC4475, #276DBC)
+}
+
+
+/* for capcom */
+
+.gradientCapcomBlue {
+  background: linear-gradient(135deg, #15359e, #15359e)
+}
+
+/* for fishbowl */
+
+.gradientBubble {
+  background: linear-gradient(135deg, #62d5ff, #1a1eff);
+  background-image:
+          url("https://material.voistock.com/photo/image.php?id=65bcd9fd4b117&photo=65bcd9fd4b16c");
+  background-position: center;
+}
+
+
+/* for Ensemble Square */
+
+.gradientRhythmLink {
+  background: linear-gradient(90deg, #E95081, #F8B64C)
+}
+
+.gradientCosmicProduction {
+  background: linear-gradient(90deg, #241B37, #271F3A)
+}
+
+.gradientNewDimension {
+  background: linear-gradient(45deg, #033F99, #E61D0F)
+}
+
+.gradientStarmkaerProduction {
+  background: linear-gradient(135deg, #FAB700, #59C1E2)
+}
+
+.gradientEnsembleStars {
+  background: linear-gradient(135deg, #4F7DBD, #E6C7DF)
+}
+
+
+/* Super Formula */
+
+.gradientRedBlue {
+  background: linear-gradient(135deg, #F6104D, #5AB9DB)
+}
+
+/* Oshiro Tabi */
+.gradientHikone {
+  background: linear-gradient(135deg, #861414, #BA1D1E)
+}
+
+.gradientOsaka {
+  background: linear-gradient(135deg, #3b8688, #58BEC0)
+}
+
+.gradientInuyama {
+  background: linear-gradient(135deg, #445563, #627B8F)
+}
+
+
+
+/* hololive */
+
+.gradientBluePink {
+  background: linear-gradient(135deg, #4F7DBD, #E6C7DF);
+  background-image:
+          url("https://material.voistock.com/photo/image.php?id=65e3d72c5cedb&photo=65e3d72c5cf2f");
+  background-position: center;
+}
+
+
+/* Girls Band Cry */
+
+.gradientGirlsBandCry {
+  background: linear-gradient(180deg, #F40000, #000)
+}
+
+
+
+/* Eupho */
+
+.gradientReina {
+  /* background: linear-gradient(135deg, #9590D4, #CDCCEC); */
+  background: linear-gradient(180deg, #01A1E9, #FFF100);
+
+  /* background-image: url(/view/event-eupho/img/stampbg.png);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-color:#CDCCEC; */
+}
+
+.gradientTabi {
+  background: linear-gradient(180deg, #01A1E9, #FFF100);
+  /* background-image: url(/view/event-eupho/img/stampbg.png);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-color:#EAE2CC; */
+}
+
+
+/* Blue Archive */
+.gradientBlueArchive {
+  background: linear-gradient(135deg, #3E80BB, #8CD6D5)
+}
+
+
+/* Jujutsu Kaisen */
+.gradientTojo {
+  background: linear-gradient(135deg, #8849C9, #441a6e)
+}
+
+
+/* Kusuriya */
+.gradientKusuriyaShinkansen {
+  background: linear-gradient(135deg, #679bf6, #2D446D)
+}
+
+.gradientKusuriyaPurple {
+  background: linear-gradient(135deg, #935eff, #6A1F51)
+}
+
+.gradientKusuriyaYakushiji {
+  background: linear-gradient(135deg, #bd0000, #8d0000)
+}
+
+.gradientKusuriyaPark {
+  background: linear-gradient(135deg, #00c210, #01680a)
+}
+
+.gradientKusuriyaBrown {
+  background: linear-gradient(135deg, #8d5719, #5a370f)
+}
+
+.gradientKusuriyaBook {
+  background: linear-gradient(135deg, #006ac6, #000a56)
+}
+
+/* 伊勢イベント */
+
+.gradientIse {
+  background: linear-gradient(135deg, #7D9A76, #617d5a)
+}
+
+
+
+/* にじさんじ*/
+
+.gradientChroNoir {
+  background: linear-gradient(135deg, #D8B880, #1A1A1A)
+}
+
+.gradientRofMao {
+  background: linear-gradient(135deg, #3CF904, #1A1A1A)
+}
+
+
+
+/* 変サラ 単色*/
+.gradientHensaraPurple {
+  background: #C86EB4;
+}
+
+.gradientHensaraSkyBlue {
+  background: #28BEF0;
+}
+
+.gradientHensaraLightGreen {
+  background: #50BEA0;
+}
+
+.gradientHensaraRed {
+  background: #FF374B;
+}
+
+.gradientHensaraOrange {
+  background: #FFA523;
+}
+
+.gradientHensaraBlue {
+  background: #4B69EA;
+}
+
+.gradientHensaraGreen {
+  background: #93CC11;
+}
+
+
+/* Aえ！　ヤングタウン 単色 */
+
+.gradeintABlack {
+  background: #000;
+}
+
+
+/* 新幹線で行くじゅじゅ探訪 */
+
+.gradientJujutsuShinkansen {
+  background: linear-gradient(135deg, #0096B3, #0073A7)
+}
+
+.gradientJujutsuTodo {
+  background: linear-gradient(135deg, #8849C9, #481E72)
+}
+
+.gradientJujutsuItadori {
+  background: linear-gradient(135deg, #FA9128, #FA5315)
+}
+
+.gradientJujutsuFushiguro {
+  background: linear-gradient(135deg, #2AC1AF, #129CA8)
+}
+
+.gradientJujutsuGojo {
+  background: linear-gradient(135deg, #37C9E6, #3F93D1)
+}
+
+.gradientJujutsuKugizaki {
+  background: linear-gradient(135deg, #DE2828, #AA1010)
+}
+
+/* 小市民 */
+
+.gradientShoshimin {
+  background: linear-gradient(135deg, #ffccff, #FFF0F5);
+  background-image:
+          url("https://material.voistock.com/photo/image.php?id=664ba159a293f&photo=664ba159a29a6");
+  background-position: center;
+}
+
+
+.gradientShoshiminPink{
+  background: #ff0072;
+  background-color: #ff0072;
+}
+
+/* BEYOOOOOOONDs */
+
+.gradientYellowRed {
+  background: linear-gradient(135deg, #fff100, #e60012)
+}
+
+.gradientSeaBlueOrange {
+  background: linear-gradient(135deg, #47bbec, #f36806)
+}
+
+.gradientHotPinkPurple {
+  background: linear-gradient(135deg, #E40080, #6A1686)
+}
+
+.gradientPinkGreen{
+  background: linear-gradient(135deg, #FF80AD,#01824C)
+}
+
+.gradientLavendarMintGreen{
+  background: linear-gradient(135deg, #c88bd1,#4ab9ab)
+}
+
+.gradientOrangeMediumBlue{
+  background: linear-gradient(135deg, #f36806,#316ac6)
+}
+
+
+/* #E40080  #6A1686 */
+
+.gradientASIAN {
+  background: linear-gradient(135deg, #2E3851, #023851);
+}
+
+.gradientWhiteGray{
+  background: linear-gradient(180deg, #fff 50%, #828282);
+}
+
+
+/* 刀剣乱舞 */
+
+:root {
+  --color-souza1: #D88B9B;
+  --color-souza2: #B0727E;
+
+  --color-fudo1: #726DB0;
+  --color-fudo2: #3C396B;
+
+  --color-yagen1: #9C6089;
+  --color-yagen2: #6F3E5F;
+
+  --color-heshikiri1: #8D72A4;
+  --color-heshikiri2: #584572;
+
+  --color-mikazuki1: #6583CB;
+  --color-mikazuki2: #283C71;
+
+  --color-yamanba1: #506D95;
+  --color-yamanba2: #334668;
+}
+
+.gradientSouza {
+  background: linear-gradient(90deg, var(--color-souza1), var(--color-souza2));
+}
+
+.gradientFudou {
+  background: linear-gradient(90deg, var(--color-fudo1), var(--color-fudo2));
+}
+
+.gradientYagen {
+  background: linear-gradient(90deg, var(--color-yagen1), var(--color-yagen2));
+}
+
+.gradientHeshikiri {
+  background: linear-gradient(90deg, var(--color-heshikiri1), var(--color-heshikiri2));
+}
+
+.gradientMikazuki {
+  background: linear-gradient(90deg, var(--color-mikazuki1), var(--color-mikazuki2));
+}
+
+.gradientYamanba {
+  background: linear-gradient(90deg, var(--color-yamanba1), var(--color-yamanba2));
+}
+
+
+/* ホロライブシティ */
+
+.gradientHololiveCityShinkansen{
+  background: linear-gradient(135deg, #22C0CE, #5aecf9)
+}
+
+.gradientHololiveCityLocal{
+  background: linear-gradient(135deg, #F795A8, #ffb6c5)
+}
+
+/* SHOWBIZ */
+.gradientShowbiz {
+  background-color: darkslateblue;
+  background: url("/view/event-showbiz/img/mv_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* BanG Dream! */
+.gradientTrack1{
+  background: linear-gradient(135deg, #93B8FF, #EF74C0)
+}
+
+.gradientTrack2{
+  background: linear-gradient(135deg, #E2EEC8, #05BEFF)
+}
+
+
+/* DESIGN YOUR FANTASTIC FUTURE */
+
+.gradientDYFF{
+  background: linear-gradient(135deg, #41A6B6, #91C2A2)
+}
+
+/* 推しの子 */
+
+.gradientOshinoko {
+  background: linear-gradient(180deg, #FEFDE1, #F9D3D0, #F6B58B)
+}
+
+/* 推しの子 */
+
+.gradientSPulse {
+  background: linear-gradient(135deg, #004067, #FF8709)
+}
+
+
+
+/* LiSA */
+
+.gradientLisa {
+  background: #030303;
+  background-image: url("/view/event-cocktailparty/img/bg.jpg");
+  background-size: 50%;
+  background-repeat: repeat;
+}
+
+
+/* アイマス関係 */
+
+.gradientTravelMedley {
+  background-image: url(/view/event-travel_medley/img/bg_anytime.webp);
+  background-repeat: repeat-y;
+  background-size: 100%;
+  background-position: top;
+}
+
+
+.gradientSideMAll {
+  background: #11be93;
+}
+
+.gradientSideM_Konzetsu {
+  background: #d70051;
+}
+
+.gradientSideM_Hero {
+  background: #f8b62d;
+}
+
+.gradientSideM_Bengaku {
+  background: #4d4398;
+}
+
+.gradientCinderellaGirls{
+  background: #294d81;
+}

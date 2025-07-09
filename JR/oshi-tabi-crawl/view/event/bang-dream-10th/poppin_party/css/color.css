@@ -1,0 +1,151 @@
+:root {
+    --color-black: #1f1f1f;
+    --color-local: #ED6D00;
+    --color-main: #fefcfd;
+
+    --color-sub1: #ff3378;
+    --color-sub2: #ff3378;
+    --color-sub3: #ff3378;
+    --color-sub4: #ff3378;
+
+    --color-tokai: #ED6D00;
+    --color-white: #ffffff;
+}
+
+/* Main Color Styles */
+.main-bg {
+    background: var(--color-main);
+}
+
+.main-gradient {
+    background: linear-gradient(to top, var(--color-main), #fff 50%, #fff 100%);
+}
+
+.main-border {
+    border: 1px solid var(--color-main);
+    background: var(--color-white);
+}
+
+.main-text {
+    color: var(--color-main) !important;
+}
+
+/* Sub Color Styles */
+.sub1-bg {
+    background: var(--color-sub1);
+}
+
+.sub1-gradient {
+    background: linear-gradient(to top, var(--color-sub1), #fff 50%, #fff 100%);
+}
+
+.sub1-border {
+    border: 1px solid var(--color-sub1);
+}
+
+.sub1-text {
+    color: var(--color-sub1) !important;
+}
+
+/* Sub2 Color Styles */
+.sub2-bg {
+    background: var(--color-sub2);
+}
+
+.sub2-gradient {
+    background: linear-gradient(to top, var(--color-sub2), #fff 50%, #fff 100%);
+}
+
+.sub2-border {
+    border: 1px solid var(--color-sub2);
+}
+
+.sub2-text {
+    color: var(--color-sub2) !important;
+}
+
+/* Sub3 Color Styles */
+.sub3-bg {
+    background: var(--color-sub3);
+}
+
+.sub3-gradient {
+    background: linear-gradient(to top, var(--color-sub3), #fff 50%, #fff 100%);
+}
+
+.sub3-border {
+    border: 1px solid var(--color-sub3);
+}
+
+.sub3-text {
+    color: var(--color-sub3) !important;
+}
+
+/* Sub4 Color Styles */
+.sub4-bg {
+    background: var(--color-sub4);
+}
+
+.sub4-gradient {
+    background: linear-gradient(to top, var(--color-sub4), #fff 50%, #fff 100%);
+}
+
+.sub4-border {
+    border: 1px solid var(--color-sub4);
+}
+
+.sub4-text {
+    color: var(--color-sub4) !important;
+}
+
+/* Tokai Color Styles */
+.tokai-bg {
+    background: var(--color-tokai);
+}
+
+.tokai-border {
+    border: 1px solid var(--color-tokai);
+}
+
+.tokai-text {
+    color: var(--color-tokai);
+}
+
+/* Local Color Styles */
+.local-bg {
+    background: var(--color-local);
+}
+
+.local-border {
+    border: 1px solid var(--color-local);
+}
+
+.local-text {
+    color: var(--color-local);
+}
+
+/* Black Color Styles */
+.black-bg {
+    background: var(--color-black);
+}
+
+.black-border {
+    border: 1px solid var(--color-black);
+}
+
+.black-text {
+    color: var(--color-black);
+}
+
+/* White Color Styles */
+.white-bg {
+    background: var(--color-white);
+}
+
+.white-border {
+    border: 1px solid var(--color-white);
+}
+
+.white-text {
+    color: var(--color-white);
+}
