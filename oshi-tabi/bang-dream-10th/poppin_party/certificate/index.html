@@ -33,17 +33,16 @@
 
 
     <!-- JQUERY Related -->
-    <script src="/jquery/jquery-3.5.1.min.js"></script>
-    <script src="/jquery/jquery.ajax-retry.min.js"></script>
-    <script src="/jquery/jquery-ui.min.js"></script>
-    <script src="/jquery/jquery.datetimepicker.js"></script>
-
+    <script src="/oshi-tabi/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/oshi-tabi/jquery/jquery.ajax-retry.min.js"></script>
+    <script src="/oshi-tabi/jquery/jquery-ui.min.js"></script>
+    <script src="/oshi-tabi/jquery/jquery.datetimepicker.js"></script>
     <!-- CSS Related -->
-    <link rel="stylesheet" href="/w3css/w3.css">
-    <link rel="stylesheet" href="/css/style.css?2025-07-09">
-    <link rel="stylesheet" href="/css/notosansjp.css?2025-07-09">
+    <link rel="stylesheet" href="/oshi-tabi/w3css/w3.css">
+    <link rel="stylesheet" href="/oshi-tabi/css/style.css?2025-07-09">
+    <link rel="stylesheet" href="/oshi-tabi/css/notosansjp.css?2025-07-09">
 
-    <link rel="stylesheet" href="/css/color.css?12025-07-09">
+    <link rel="stylesheet" href="/oshi-tabi/css/color.css?12025-07-09">
 
 
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,16 +50,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet"> -->
 
     <!-- JS Related -->
-    <script src="/jsConfig/config.js?2025-07"></script>
-    <script src="/jsConfig/commonFunction.js?2025-07"></script>
-    <script src="/js/ajax.js?12025-07-09"></script>
-    <script src="/js/unique.js?2025-07-09"></script>
+    <script src="/oshi-tabi/jsConfig/config.js?2025-07"></script>
+    <script src="/oshi-tabi/jsConfig/commonFunction.js?2025-07"></script>
+    <script src="/oshi-tabi/js/ajax.js?12025-07-09"></script>
+    <script src="/oshi-tabi/js/unique.js?2025-07-09"></script>
 
 
 </head>
 <script>
-    var eventId = "682405ede780ea0599dd10ca";
-    var eventIdAll = "682405b6e780ea0599dd10c9";
+    var eventId = "";
+    var eventIdAll = "";
     var eventUrl = "https://oshi-tabi.voistock.com/bang-dream-10th/poppin_party";
     localStorage.setItem("eventUrl", eventUrl);
     var eventAllUrl = "https://oshi-tabi.voistock.com/bang-dream-10th";
@@ -71,7 +70,7 @@
 <script>
     (function (d) {
         var config = {
-            kitId: 'mgq8buw',
+            kitId: '',
             scriptTimeout: 3000,
             async: true
         },
@@ -135,10 +134,10 @@
     <script>
         var ORANGE_URL = "https://orange-system.jr-central.co.jp";
     </script>
-    <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/oshi-tabi/vendor/fontawesome/css/all.min.css">
 
     <!-- Navigation -->
-    <link rel="stylesheet" href="/css/navi.css?12025-04-09">
+    <link rel="stylesheet" href="/oshi-tabi/css/navi.css?12025-04-09">
     <header id="mainHeader" style='display: none' ;>
         <nav>
             <div class="logo backIcon" style='display: none' ; ;>
@@ -185,7 +184,7 @@
             <div class="logo">
                 <!-- <a href="https://recommend.jr-central.co.jp/oshi-tabi/" target="_blank"><img src="/svg/oshitabi.svg" alt="Oshi-Tabi" /></a> -->
                 <a href="https://recommend.jr-central.co.jp/oshi-tabi/" target="_blank"><img
-                        src="/logo/logo_oshitabi.png" alt="Oshi-Tabi" /></a>
+                        src="/oshi-tabi/logo/logo_oshitabi.png" alt="Oshi-Tabi" /></a>
             </div>
 
             <div class="menuBar">
@@ -284,7 +283,7 @@
         </div>
     </div>
 
-    <script src="/js/naviOrange.js?22025-04-09"></script>
+    <script src="/oshi-tabi/js/naviOrange.js?22025-04-09"></script>
     <script>
         $("#logout_new").click(function () {
             // Clear cookies
@@ -348,18 +347,18 @@
 
         $("#loginStatus_new").click(function () {
             //        window.location.href = ORANGE_URL + "/mypage";
-            window.location.href = ORANGE_URL + "/user/login?redirect=true&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3d3dy52b2lzdG9jay5jb20iLCJleHAiOjE3ODM1NzUxMDEsImlkIjoiNjgwM2IwM2EzZTQxODY1ZmY2M2JkYjI3In0.CEj0QbQ9d6neev4oZOznZWSFuKJeBMYqI_vJAhAkw_Q&target=top&from=/bang-dream-10th";
+            window.location.href = ORANGE_URL + "/user/login?redirect=true&target=top&from=/bang-dream-10th";
 
         });
 
         $("#rideHistory").click(function () {
             //        window.location.href = ORANGE_URL + "/mypage";
-            window.location.href = ORANGE_URL + "/user/login?redirect=true&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3d3dy52b2lzdG9jay5jb20iLCJleHAiOjE3ODM1NzUxMDEsImlkIjoiNjgwM2IwM2EzZTQxODY1ZmY2M2JkYjI3In0.CEj0QbQ9d6neev4oZOznZWSFuKJeBMYqI_vJAhAkw_Q&target=rideHistory";
+            window.location.href = ORANGE_URL + "/user/login?redirect=true&target=rideHistory";
         });
 
         $("#withdrawal").click(function () {
             //        window.location.href = ORANGE_URL + "/mypage";
-            window.location.href = ORANGE_URL + "/user/login?redirect=true&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3d3dy52b2lzdG9jay5jb20iLCJleHAiOjE3ODM1NzUxMDEsImlkIjoiNjgwM2IwM2EzZTQxODY1ZmY2M2JkYjI3In0.CEj0QbQ9d6neev4oZOznZWSFuKJeBMYqI_vJAhAkw_Q&target=withdrawal";
+            window.location.href = ORANGE_URL + "/user/login?redirect=true&target=withdrawal";
         });
 
         $("#changePassword").click(function () {
@@ -396,15 +395,13 @@
 
         $(document).ready(function () {
             $(".smsmodal-submit").click(function () {
-                window.location.href = ORANGE_URL + "/user/login?token=" + "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3d3dy52b2lzdG9jay5jb20iLCJleHAiOjE3ODM1NzUxMDEsImlkIjoiNjgwM2IwM2EzZTQxODY1ZmY2M2JkYjI3In0.CEj0QbQ9d6neev4oZOznZWSFuKJeBMYqI_vJAhAkw_Q&goto=phone_register";
-                // window.location.href = ORANGE_URL + "/mypage?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3d3dy52b2lzdG9jay5jb20iLCJleHAiOjE3ODM1NzUxMDEsImlkIjoiNjgwM2IwM2EzZTQxODY1ZmY2M2JkYjI3In0.CEj0QbQ9d6neev4oZOznZWSFuKJeBMYqI_vJAhAkw_Q&goto=phone_register";
+                window.location.href = ORANGE_URL + "/user/login?goto=phone_register";
             });
         });
 
         $(document).ready(function () {
             $(".show-mypage").click(function () {
-                window.location.href = ORANGE_URL + "/user/login?token=" + "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3d3dy52b2lzdG9jay5jb20iLCJleHAiOjE3ODM1NzUxMDEsImlkIjoiNjgwM2IwM2EzZTQxODY1ZmY2M2JkYjI3In0.CEj0QbQ9d6neev4oZOznZWSFuKJeBMYqI_vJAhAkw_Q";
-                // window.location.href = ORANGE_URL + "/mypage?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3d3dy52b2lzdG9jay5jb20iLCJleHAiOjE3ODM1NzUxMDEsImlkIjoiNjgwM2IwM2EzZTQxODY1ZmY2M2JkYjI3In0.CEj0QbQ9d6neev4oZOznZWSFuKJeBMYqI_vJAhAkw_Q&goto=phone_register";
+                window.location.href = ORANGE_URL + "/user/login";
             });
         });
     </script>
@@ -415,9 +412,9 @@
     <!-- Page Container -->
 
 
-    <link rel="stylesheet" href="/view/event/bang-dream-10th/poppin_party/css/buttons.css">
-    <link rel="stylesheet" href="/view/event/bang-dream-10th/poppin_party/css/certificate.css">
-    <link rel="stylesheet" href="/view/event/bang-dream-10th/poppin_party/css/color.css">
+    <link rel="stylesheet" href="/oshi-tabi/view/event/bang-dream-10th/poppin_party/css/buttons.css">
+    <link rel="stylesheet" href="/oshi-tabi/view/event/bang-dream-10th/poppin_party/css/certificate.css">
+    <link rel="stylesheet" href="/oshi-tabi/view/event/bang-dream-10th/poppin_party/css/color.css">
 
 
     <style>
@@ -515,7 +512,7 @@
         <div class="completedHeader">
 
             <div class="checkIcon">
-                <img src="/view/event-aobuta/img/check.svg">
+                <img src="/oshi-tabi/view/event-aobuta/img/check.svg">
             </div>
             <div class="courseName fontNotoSerif">
                 新幹線乗車証明 </div>
@@ -525,7 +522,7 @@
         </div>
 
         <div class="charaImage">
-            <img src="/view/event/bang-dream-10th/poppin_party/img/certificate.jpg">
+            <img src="/oshi-tabi/view/event/bang-dream-10th/poppin_party/img/certificate.jpg">
         </div>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
@@ -556,7 +553,7 @@
                 見せながら操作してください
             </div>
 
-            <div id="slider" class="sliderContainer notUsedSlider " style='display: none' ;>
+            <div id="slider" class="sliderContainer notUsedSlider " style='display: flex' ;>
                 <div id="overlay" class="all-gradient"></div>
                 <div id="handle" class="sliderHandle button-gradient">
                     交換する
@@ -568,7 +565,7 @@
             </div>
 
 
-            <div id="slider" class="sliderContainer usedSlider" style='display: flex' ;>
+            <div id="slider" class="sliderContainer usedSlider" style='display: none' ;>
                 <div id="overlay" class="completed-gradient">
 
                 </div>
@@ -633,7 +630,7 @@
                         console.log("Slider reached the end");
                         // alert("worked!");
                         // checkCouponLog()
-                        getLatestCouponWithAccountId();
+                        getLatestCouponWithAccountIdMock();
                     } else {
                         $(this).slider('value', 0);
                         $('#handle').css('left', '0');
@@ -700,12 +697,24 @@
 
         document.getElementById("yesBtn").onclick = function () {
             modal.style.display = "none";
-            runYesFunction();
+            runYesFunctionMock();
         }
 
         document.getElementById("noBtn").onclick = function () {
             modal.style.display = "none";
             runNoFunction();
+        }
+
+        async function runYesFunctionMock() {
+            $("#slider").slider('value', 0);
+            $('#handle').css('left', '0');
+            $('#overlay').css('width', '0');
+            hideLoadingScreen();
+            showLoadingScreen("Exchanging・・・");
+            // 等待1秒
+            await new Promise(resolve => setTimeout(resolve, 500));
+            hideLoadingScreen();
+            window.location.href = '/oshi-tabi/bang-dream-10th/poppin_party/certificate_used';
         }
 
         function runYesFunction() {
@@ -737,6 +746,10 @@
             $('#overlay').css('width', '0');
             hideLoadingScreen();
             showLoadingScreen("Exchanging・・・");
+            setTimeout(function () {
+                hideLoadingScreen();
+            }, 2000);
+
             var token = getCookie("oshitabi");
 
             var selectedStation = "ライブ会場";
@@ -766,11 +779,27 @@
 
         var couponId;
 
+        async function getLatestCouponWithAccountIdMock() {
+            showLoadingScreen("Checking・・・");
+
+            // 等待1秒
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            hideLoadingScreen();
+            showLoadingScreen("Loading・・・");
+
+            // 再等待1秒
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            hideLoadingScreen();
+            showModal();
+        }
+
         function getLatestCouponWithAccountId() {
             showLoadingScreen("Checking・・・");
             var token = getCookie("oshitabi");
 
-            var eventId = "682405b6e780ea0599dd10c9";
+            var eventId = "";
             var url = API_SERVER + "/api_oshitabi/event/getLatestCouponWithAccountId.php";
             var requestJson = {
                 "key": API_KEY,
@@ -850,7 +879,7 @@
         }
     </script>
 
-    <script src="/js/check_internet.js"></script>
+    <script src="/oshi-tabi/js/check_internet.js"></script>
 
     <footer>
 
@@ -861,7 +890,7 @@
         <p></p> -->
             <div class="info-section">
                 <div class="logo-text">
-                    <img class="company-logo" src="/logo/voistock_logo.png" alt="VoiStock Logo">
+                    <img class="company-logo" src="/oshi-tabi/logo/voistock_logo.png" alt="VoiStock Logo">
                     <!-- <p>スタンプラリーおよび音声配信システムは<br>VoiStock PTE. LTD. のサービスを<br>利用しております。</p> -->
                     <p>音声配信システム<br>VoiStock PTE. LTD. のサービスを<br>利用しております。</p>
                 </div>
