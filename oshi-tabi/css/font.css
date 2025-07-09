@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url(https://oshi-tabi.voistock.com/font/Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf);
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Noto Serif JP';
+    src: url(https://oshi-tabi.voistock.com/font/Noto_Serif_JP/NotoSerifJP-Regular.otf);
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Noto Serif JP Medium';
+    src: url(https://oshi-tabi.voistock.com/font/Noto_Serif_JP/NotoSerifJP-Medium.otf);
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Noto Serif JP SemiBold';
+    src: url(https://oshi-tabi.voistock.com/font/Noto_Serif_JP/NotoSerifJP-SemiBold.otf);
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Noto Serif JP Bold';
+    src: url(https://oshi-tabi.voistock.com/font/Noto_Serif_JP/NotoSerifJP-Bold.otf);
+    font-display: swap;
+  }
+
+
+  @font-face {
+    font-family: 'Noto Serif JP Light';
+    src: url(https://oshi-tabi.voistock.com/font/Noto_Serif_JP/NotoSerifJP-Light.otf);
+    font-display: swap;
+  }
+
+
+@font-face {
+  font-family: 'Sawarabi Mincho';
+  src: url(https://oshi-tabi.voistock.com/font/Sawarabi_Mincho/SawarabiMincho-Regular.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url(https://oshi-tabi.voistock.com/font/Zen_Maru_Gothic/ZenMaruGothic-Light.ttf);
+  font-weight: 300;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url(https://oshi-tabi.voistock.com/font/Zen_Maru_Gothic/ZenMaruGothic-Regular.ttf);
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url(https://oshi-tabi.voistock.com/font/Zen_Maru_Gothic/ZenMaruGothic-Medium.ttf);
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url(https://oshi-tabi.voistock.com/font/Zen_Maru_Gothic/ZenMaruGothic-Bold.ttf);
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url(https://oshi-tabi.voistock.com/font/Zen_Maru_Gothic/ZenMaruGothic-Black.ttf);
+  font-weight: 700;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Kaisei Opti';
+  src: url(https://oshi-tabi.voistock.com/font/Kaisei_Opti/KaiseiOpti-Bold.ttf);
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kaisei Opti';
+  src: url(https://oshi-tabi.voistock.com/font/Kaisei_Opti/KaiseiOpti-Medium.ttf);
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kaisei Opti';
+  src: url(https://oshi-tabi.voistock.com/font/Kaisei_Opti/KaiseiOpti-Regular.ttf);
+  font-weight: 400;
+  font-display: swap;
+}

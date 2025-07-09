@@ -1,0 +1,68 @@
+  /* warning */
+
+  .spacer {
+      height: 10px;
+      width: 99%;
+      max-width: 380px;
+  }
+
+  .toggleWarning {
+      position: relative;
+  }
+
+  .toggleWarning h4 {
+      /* margin-right: 5%; */
+      color: red;
+      font-weight: 650;
+  }
+
+  /*アイコンの＋と-ここから*/
+  /* .Contents__attention__ttlを親要素としてアイコン位置を絶対値で指定 */
+
+
+  .open__icon__block {
+      position: absolute;
+      right: 15%;
+      top: 50%;
+      transform: translatey(-50%);
+      width: 24px;
+      height: 24px;
+      background: #000;
+      border-radius: 50%;
+  }
+
+  /* .open__icon__blockの中でプラスを中央に位置させるために.open__iconを親要素に設定 */
+  .open__icon {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+  }
+
+  /* プラスアイコン */
+  /* ２本の線を.open__icon__blockの中央に並行に重ねる */
+  .open__icon::before,
+  .open__icon::after {
+      position: absolute;
+      content: "";
+      display: block;
+      transition: all 0.4s;
+      background: #fff;
+      left: 50%;
+      top: 50%;
+      width: 50%;
+      height: 2px;
+      transform: translate(-50%, -50%);
+  }
+
+  /* そのうち1本を縦にする */
+  .open__icon:before {
+      transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  /* プラスアイコンクリック後、マイナスにする */
+  .open__icon.open::before {
+      transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  /*アイコンの＋と-ここまで*/
