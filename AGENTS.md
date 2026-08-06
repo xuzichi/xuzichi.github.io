@@ -56,3 +56,10 @@ oshi-tabi/                      # ④ 「推し旅」Bang Dream 10周年×JR东�
 
 - 本地预览：直接用浏览器打开 HTML 文件即可（oshi-tabi 用 `python -m http.server` 起本地服务效果更好）。
 - 发布：`git add -A && git commit -m "update: 说明" && git push origin main`，GitHub Pages 自动部署。
+
+## 故障排障：站点 404 / 部署卡住
+
+- 现象：`pages build and deployment` 的 deploy 阶段报 `Deployment failed, try again later`，随后站点 404、Pages 状态一直卡在 `building`（曾发生在 2026-07 删除 CNAME 后）。
+- 原因：GitHub 侧临时部署失败，且构建状态未自动恢复；超一个月的失败 run 无法用 `gh run rerun` 重跑。
+- 修复：往 `main` 推任意新提交（如空提交或文档改动）触发一次全新构建即可，无需改动任何配置。
+- 验证：`curl -I https://xuzichi.github.io/` 应返回 200；`gh api repos/xuzichi/xuzichi.github.io/pages/builds/latest` 状态应为 `built`。
