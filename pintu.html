@@ -383,7 +383,8 @@
       schedulePreview();
     });
     document.querySelectorAll('input[name="align"]').forEach(input => {
-      input.addEventListener('change', schedulePreview);
+      // 注意：必须用箭头函数延迟求值，直接传 schedulePreview 会在 const 初始化前触发 TDZ
+      input.addEventListener('change', () => schedulePreview());
     });
 
     // ============ 合并绘制 ============
